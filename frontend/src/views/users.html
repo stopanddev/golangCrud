@@ -1,0 +1,31 @@
+<!-- src/views/users.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoadData</title>
+</head>
+<body>
+  <h1>Data from Go Backend</h1>
+  <ul id="data-list"></ul>
+
+  <script>
+    // Fetch data from the backend (which will proxy the Go API)
+    fetch('/LoadData')
+      .then(response => response.json())
+      .then(data => {
+        const dataList = document.getElementById('data-list');
+        // Loop through the data and display it
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `${item.name} (${item.email})`; // Adjust this depending on your data
+          dataList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  </script>
+</body>
+</html>

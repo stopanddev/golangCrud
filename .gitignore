@@ -21,5 +21,32 @@
 go.work
 go.work.sum
 
-# env file
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log
+.pnpm-store/
+
+# TypeScript
+*.tsbuildinfo
+dist/
+
+# Logs and temp files
+logs
+*.log
+*.tmp
+*.pid
+
+# Environment variables
 .env
+.env.*
+!/.env.example
+
+# Editor and IDE files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

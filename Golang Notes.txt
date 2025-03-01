@@ -1,0 +1,81 @@
+Golang --
+	Code Structure
+		Package is a folder that has a collection of go files.
+		Module is a collection of these modules.
+		
+		
+	Variables
+		var age int 		//Declaration of a variable
+		var age int = 29 	//Variable declared with value
+		age := 29			// Common shorthand declaration with value
+		
+		
+	func 					// Functions 
+	
+	STRINGS -- 
+		interpreted := "Hello \n world! \n"	//Interpreted strings treat escape characters as special. Ex: \n is new line
+		raw := `Hello \n world! `  // String litteral will just print as is 
+		
+		RUNES
+		The concept of character in computing is therefore ambiguous, or at least confusing, so we use it with care. To make things dependable, there are normalization techniques that guarantee that a given character is always represented by the same code points, but that subject takes us too far off the topic for now. A later blog post will explain how the Go libraries address normalization.
+		"Code point” is a bit of a mouthful, so Go introduces a shorter term for the concept: rune. The term appears in the libraries and source code, and means exactly the same as “code point”, with one interesting addition.
+		The Go language defines the word rune as an alias for the type int32, so programs can be clear when an integer value represents a code point. Moreover, what you might think of as a character constant is called a rune constant in Go. The type and value of the expression
+		'⌘'
+		is a rune with integer value 0x2318.
+		
+		
+	Arrays --
+		intArray := [...]int32 = [2]int32{1,2}	//Fixed size array of 3
+		
+		Slice -- //Wrapper around array
+			intSlice []int32 = []int32{1,2}
+			intSlice = append(intSlice, 3)
+		
+	Loops --
+		range loop on a strings
+		    const nihongo = "日本語"
+		for index, runeValue := range nihongo {
+			fmt.Printf("%#U starts at byte position %d\n", runeValue, index)
+		}
+		
+	maps --
+		var myMap = map[string]uint8{"Joe":12, "Blow":15}
+		var age, ok = myMap["Jason]
+		if  ok{
+			//do something with age
+		} else{
+			//value doesn't exist
+		}
+		
+		
+	Structs -- in golang are kind of like defining your own type
+	type gasEngine struct{
+		mpg uint8
+		gallons uint8
+	}
+	
+		Ex: var myEngine gasEngine  // Creates a variable myEngine of type gasEngine with mpg: 0, gallons: 0
+		
+		//Structs can be extended by functions.
+		func (e gasEngine) milesLeft() uint8 {
+			return e.gallons * e.mpg
+		}
+	
+	Interface -- 
+		type engine interface
+		
+	
+   Importing 3rd party packages
+      Ex: go get github.com/gorilla/mux
+	
+CRUD
+	101 definition and examples
+	https://www.codecademy.com/article/what-is-crud
+
+Node Pack Manager
+   npm init -y   // Creates inital project
+   npm install typescript @types/express  // Installs typescript for the project
+   npm install --save-dev nodemon   // Installs tool the reload application on file change
+   --save-dev is for when we don't need something compiled into runtime
+Typescript
+   npx tsc --init  // create inital typescript project file
