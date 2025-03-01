@@ -14,7 +14,8 @@ func SetupUserRoutes(router *mux.Router) {
 }
 
 func LoadData(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-Type", "application/jsonO")
 	users, err := goHandlers.LoadDataHandler("../database/data.json")
 	if err != nil {
 		http.Error(w, "Error loading users", http.StatusInternalServerError)

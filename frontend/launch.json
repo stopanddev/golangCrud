@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch TypeScript Program",
+        "type": "node",
+        "request": "launch",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}/dist/index.js",  // Path to your compiled JavaScript file
+        "preLaunchTask": "tsc: build - tsconfig.json",  // Run TypeScript compiler before debugging
+        "outFiles": [
+          "${workspaceFolder}/dist/**/*.js"  // Specify the location of compiled JavaScript files
+        ]
+      }
+    ]
+  }
+  

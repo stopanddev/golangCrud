@@ -1,3 +1,7 @@
 [
-
+    {
+        "Id":    3,
+        "Name":  "Alice Johnson",
+        "Email": "alice@example.com"
+    }
 ]

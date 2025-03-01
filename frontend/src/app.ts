@@ -13,7 +13,7 @@ app.use('/', userRoutes);
 
 //Define a route for home page
 app.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'))
+    res.sendFile(path.join(__dirname, 'views', '../../index.html'))
 })
 // Use the userRoutes for handling user related requests
 
